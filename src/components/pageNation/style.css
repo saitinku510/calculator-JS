@@ -1,0 +1,10 @@
+.pageNation{
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+.pageNation a{
+    color: #fff;
+    opacity: 0.6;
+    text-decoration: none;
+}

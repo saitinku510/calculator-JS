@@ -1,0 +1,43 @@
+h1{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 42px;
+    color: #fff;
+    padding-bottom: 32px;
+}
+.movies{
+    display: flex;
+    gap: 32px 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movieCard{
+    max-width: 280px;
+    width: 100%;
+    position: relative;
+}
+.movieCardContent h2{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    padding-bottom: 3px;
+    min-height: 47px;
+}
+.movieCardContent p{
+    display: flex;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #cccccc;
+}
+.movieCardTitle{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px 23px;
+    justify-content: space-between;
+    background: linear-gradient(0deg, #1A2B4A 0%, #2B507C 105.38%);
+}
