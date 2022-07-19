@@ -11,16 +11,16 @@ import { Mycontext } from "../../components/context";
 
 function Home(props) {
 
-  async function dataF(search) {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=54848c6cfecb51d98584e9df33e167f3&language=en-US&query=${search}&page=1&include_adult=false`
-    );
-    setMovies(response.data.results)
-  }
+  // async function dataF(search) {
+  //   const response = await axios.get(
+  //     `https://api.themoviedb.org/3/search/movie?api_key=54848c6cfecb51d98584e9df33e167f3&language=en-US&query=${search}&page=1&include_adult=false`
+  //   );
+  //   setMovies(response.data.results)
+  // }
 
   const popularMovies = api.popularmovies;
-  const [movies, setMovies] = useState([]);
-  // const { movies, setMovies } = useContext(Mycontext);
+  // const [movies, setMovies] = useState([]);
+  const { movies, setMovies } = useContext(Mycontext);
 
   useEffect(() => {
     async function getmoviedata() {
@@ -32,7 +32,7 @@ function Home(props) {
 
   return (
     <div>
-      <Header dataF={dataF}/>
+      <Header /*dataF={dataF}*/ />
       <Banner />
       <div>
         <section className="home">
