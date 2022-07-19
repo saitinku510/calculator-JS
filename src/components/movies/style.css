@@ -15,6 +15,7 @@ h1{
     max-width: 280px;
     width: 100%;
     position: relative;
+    cursor: pointer;
 }
 .movieCardContent h2{
     font-weight: 500;

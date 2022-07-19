@@ -1,0 +1,48 @@
+.detailMovie {
+  background-position: right;
+  background-color: #000;
+  /* padding: 0; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.detailMovie button {
+  background-color: transparent;
+  border: none;
+}
+.detailMovie p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.movieContent {
+  max-width: 512px;
+  /* padding-left: 56px; */
+  padding-top: 61px;
+}
+.movieContent h1 {
+  padding: 40px 0 12px;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 50px;
+}
+.movieContent h4 {
+  padding: 12px 0 24px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 152%;
+  /* opacity: 0.7; */
+}
+.movieContent h5 {
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+.movieDetails {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

@@ -8,16 +8,9 @@ import Movies from "../../components/movies";
 import axios from "axios";
 import PageNation from "../../components/pageNation";
 import { Mycontext } from "../../components/context";
+import Moviedetail from "../../components/movieDetail";
 
 function Home(props) {
-
-  // async function dataF(search) {
-  //   const response = await axios.get(
-  //     `https://api.themoviedb.org/3/search/movie?api_key=54848c6cfecb51d98584e9df33e167f3&language=en-US&query=${search}&page=1&include_adult=false`
-  //   );
-  //   setMovies(response.data.results)
-  // }
-
   const popularMovies = api.popularmovies;
   // const [movies, setMovies] = useState([]);
   const { movies, setMovies } = useContext(Mycontext);
