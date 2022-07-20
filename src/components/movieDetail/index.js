@@ -5,6 +5,8 @@ import movie from "../../assets/images/detailMovie.svg";
 import Header from "../header";
 import axios from "axios";
 import api from "../../constant";
+import { Link } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
 
 const Moviedetail = () => {
@@ -31,14 +33,14 @@ const Moviedetail = () => {
       <section
         className="detailMovie"
         style={{
-          backgroundImage: `url(${imgUrl}${moviesdet.backdrop_path})`,
+          backgroundImage: `linear-gradient(to bottom, rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url(${imgUrl}${moviesdet.backdrop_path})`,
         }}
       >
         <div className="container">
           <div className="movieDetails">
             <div className="movieContent">
               <button>
-                <img src={arrow} />
+                <Link to={`/`} ><img src={arrow} /></Link>
               </button>
               <h1>{moviesdet.original_title}</h1>
               <p>Rating: {moviesdet.vote_average} / 10</p>

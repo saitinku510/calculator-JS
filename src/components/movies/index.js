@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import "./style.css";
 import api from "../../constant";
 import Star from "../../assets/images/Star.svg";
 import Play from "../../assets/images/play.svg";
 import { Link } from "react-router-dom";
+import { Mycontext } from "../context";
 
 const Movies = ({ title, id, vote_average, poster_path }) => {
+  const { movies } = useContext(Mycontext);
   const imgUrl = api.ImgUrl;
 
-  // const detailMovie = () => {
-  //   alert("");
-  // };
+
   return (
     <>
       <Link to={`/MovieDetail/${id}`}>

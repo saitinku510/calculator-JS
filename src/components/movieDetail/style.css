@@ -44,5 +44,14 @@
 .movieDetails {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 50px;
+}
+@media (max-width: 768px) {
+  .movieDetails {
+    flex-direction: column-reverse;
+    gap: 50px;
+    align-items: center;
+  }
 }
