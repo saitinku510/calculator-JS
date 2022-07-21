@@ -13,7 +13,7 @@ import { Mycontext } from "../../components/context";
 function Home() {
   const popularMovies = api.popularmovies;
   const { movies, setMovies } = useContext(Mycontext);
-  const [isActive, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     async function getmoviedata() {
@@ -40,7 +40,7 @@ function Home() {
   };
 
   const toggleClass = () => {
-    setActive(!isActive);
+    setActive(!active);
   };
 
   return (
@@ -52,7 +52,7 @@ function Home() {
           <div className="container">
             <div className="heading">
               <h1>Trending</h1>
-              <div className={isActive ? "active" : null} onClick={toggleClass}>
+              <div className={active ? "active" : null} onClick={toggleClass}>
                 <button style={
                   {
                     display:'flex',
@@ -67,7 +67,7 @@ function Home() {
               </div>
             </div>
             <div className="movies">
-              {movies.map((movie) => (
+              {movies.map((movie, i) => (
                 <Movies {...movie} key={movie.id} />
               ))}
             </div>

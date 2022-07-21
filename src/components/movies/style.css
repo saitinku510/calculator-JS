@@ -1,43 +1,58 @@
-h1{
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 42px;
-    color: #fff;
+h1 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  color: #fff;
 }
-.movies{
-    display: flex;
-    gap: 32px 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+.movies {
+  display: flex;
+  gap: 32px 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.movieCard{
-    max-width: 280px;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
+.movieCard {
+  max-width: 280px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
-.movieCardContent h2{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    color: #fff;
-    padding-bottom: 3px;
-    min-height: 47px;
+.movieCard:hover {
+    box-shadow: rgb(0, 0, 0) 0px 0.0625em 0.0625em, rgba(0, 0, 0) 0px 0.125em 0.5em, rgba(0, 0, 0) 0px 0px 0px 1px inset;
+    transform: scale(1.05, 1.05);
 }
-.movieCardContent p{
-    display: flex;
-    gap: 4px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #cccccc;
+.movieCard img {
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
-.movieCardTitle{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    padding: 10px 23px;
-    justify-content: space-between;
-    background: linear-gradient(0deg, #1A2B4A 0%, #2B507C 105.38%);
+.movieCard img:hover {
+  box-shadow: 0px 30px 18px -8px rgb(0 0 0 / 10%);
+  transform: scale(1.1, 1.1);
+}
+.movieCardContent h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  padding-bottom: 3px;
+  min-height: 47px;
+}
+.movieCardContent p {
+  display: flex;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #cccccc;
+}
+.movieCardTitle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 10px 23px;
+  justify-content: space-between;
+  background: linear-gradient(0deg, #1a2b4a 0%, #2b507c 105.38%);
 }

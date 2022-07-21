@@ -12,3 +12,26 @@
     padding: 5px;
     text-decoration: none;
 }
+ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: center;
+}
+ul li a{
+    cursor: pointer;
+    padding: 5px 8px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    opacity: 0.6;
+}
+.previous a, .next a{
+    color: #fff;
+    opacity: 1;
+}
+.selected a{
+    color: #FF6A63;
+    text-decoration: underline;
+    opacity: 1;
+}
