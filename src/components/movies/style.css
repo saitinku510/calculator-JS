@@ -56,3 +56,7 @@ h1 {
   justify-content: space-between;
   background: linear-gradient(0deg, #1a2b4a 0%, #2b507c 105.38%);
 }
+.vidplay {
+  position: absolute;
+  top: 0;
+}

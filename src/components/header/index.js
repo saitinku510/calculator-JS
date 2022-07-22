@@ -4,7 +4,7 @@ import Logo from "../../assets/images/instaPlayLogo.svg";
 import Search from "../../assets/images/search.svg";
 import axios from "axios";
 import { Mycontext } from "../context";
-
+import { Link } from "react-router-dom";
 
 function Header(props) {
   const { setMovies } = useContext(Mycontext);
@@ -20,8 +20,14 @@ function Header(props) {
   }
 
   const searchHandle = () => {
-    // props.dataF(search) 
+    // props.dataF(search)
     fetchdata();
+  };
+  const searchHandleResult = (e) => {
+    setSearch(e.target.value);
+    setTimeout(() => {
+      fetchdata();
+    }, 2000);
   };
 
   return (
@@ -29,14 +35,14 @@ function Header(props) {
       <header>
         <div className="container">
           <div className="header">
-            <img src={Logo} />
+            <Link to={`/`}>
+              <img src={Logo} />
+            </Link>
             <div className="headerSearch">
               <input
                 type="search"
                 value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                }}
+                onChange={searchHandleResult}
                 placeholder="Search Movies"
               />
               <button onClick={searchHandle}>

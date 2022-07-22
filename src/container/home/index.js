@@ -53,13 +53,15 @@ function Home() {
             <div className="heading">
               <h1>Trending</h1>
               <div className={active ? "active" : null} onClick={toggleClass}>
-                <button style={
-                  {
-                    display:'flex',
-                    alignItems : 'center',
-                    gap:'10px'
-                  }
-                }>Filter by rating <img src={Star} /></button>
+                <button
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                  }}
+                >
+                  Filter by rating <img src={Star} />
+                </button>
                 <div className="rating">
                   <button onClick={voteAveHigh}>High to Low</button>
                   <button onClick={voteAveLow}>Low to High</button>
