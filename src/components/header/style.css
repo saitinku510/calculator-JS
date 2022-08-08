@@ -1,46 +1,54 @@
-header{
-    width: 100%;
-    background-color: #263F61;
+header {
+  width: 100%;
+  background-color: #263f61;
 }
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 13px 0;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
-.headerSearch{
-    position: relative;
-    width: 100%;
-    max-width: 424px;
+.headerSearch {
+  position: relative;
+  width: 100%;
+  max-width: 424px;
 }
-.headerSearch input{
-    padding: 10px 8px;
-    color: #fff;
-    width: 100%;
-    height: fit-content;
-    outline: none;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.26);
-    border-radius: 5px;
+.headerSearch input {
+  padding: 10px 8px;
+  color: #fff;
+  width: 100%;
+  height: fit-content;
+  outline: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 5px;
 }
-.headerSearch input::placeholder{
-    color: #fff;
+.headerSearch input::placeholder {
+  color: #fff;
 }
-.headerSearch button{
-    position: absolute;
-    right: 0;
-    border: none;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    cursor: pointer;
+.headerSearch button {
+  position: absolute;
+  right: 0;
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
 }
-.headerSearch img{
-    height: fit-content;
-    padding: 11px 13px;
-    height: 42px;
-    background: linear-gradient(180deg, #FF9966 0%, #FF5E62 100%);
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+.headerSearch img {
+  height: fit-content;
+  padding: 11px 13px;
+  height: 42px;
+  background: linear-gradient(180deg, #ff9966 0%, #ff5e62 100%);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.btn {
+  padding: 8px 15px;
+  background: #263f61;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 5px;
+  cursor: pointer;
 }

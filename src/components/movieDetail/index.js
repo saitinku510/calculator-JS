@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./style.css";
 import arrow from "../../assets/images/leftArrow.svg";
-import movie from "../../assets/images/detailMovie.svg";
 import Header from "../header";
 import axios from "axios";
 import api from "../../constant";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
+import { Mycontext } from "../context";
 
 import { useParams } from "react-router-dom";
 
@@ -16,6 +16,8 @@ const Moviedetail = ({ key }) => {
   const [moviesdet, setMoviesdet] = useState([]);
   const [video, setVideo] = useState([]);
   const [active, setActive] = useState("");
+  const { none, setNone } = useContext(Mycontext);
+  const { noneMovie, setNoneMovie } = useContext(Mycontext);
 
   useEffect(() => {
     async function detailedMovie() {
@@ -23,8 +25,12 @@ const Moviedetail = ({ key }) => {
         `https://api.themoviedb.org/3/movie/${id}?api_key=54848c6cfecb51d98584e9df33e167f3&language=en-US`
       );
       setMoviesdet(respo.data);
+      setTimeout(() => {
+        setNoneMovie("");
+      }, 2000);
       return respo.data;
     }
+
     async function movieVideo() {
       const vid = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=54848c6cfecb51d98584e9df33e167f3&language=en-US`
@@ -38,7 +44,16 @@ const Moviedetail = ({ key }) => {
     }
     detailedMovie();
     movieVideo();
-  }, []);
+
+    const handleLoad = () => {
+      var set = setTimeout(() => {
+        setNone("none");
+      }, 2000);
+      return () => clearTimeout(set);
+    };
+    handleLoad();
+  }, [id]);
+  // console.log(none, noneMovie)
 
   const handleAddClass = () => {
     setActive("active");
@@ -50,9 +65,14 @@ const Moviedetail = ({ key }) => {
 
   return (
     <>
-      <Header />
+      <Header page={"movie"}/>
+      <section className={none}>
+        <div className="spinner-container">
+          <div className="loading-spinner"></div>
+        </div>
+      </section>
       <section
-        className="detailMovie"
+        className={`detailMovie ${noneMovie}`}
         style={{
           backgroundImage: `linear-gradient(to bottom, rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url(${imgUrl}${moviesdet.backdrop_path})`,
         }}
@@ -61,7 +81,7 @@ const Moviedetail = ({ key }) => {
           <div className="movieDetails">
             <div className="movieContent">
               <button>
-                <Link to={`/`}>
+                <Link to={`/Home`}>
                   <img src={arrow} />
                 </Link>
               </button>

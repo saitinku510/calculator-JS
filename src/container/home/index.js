@@ -14,6 +14,8 @@ function Home() {
   const popularMovies = api.popularmovies;
   const { movies, setMovies } = useContext(Mycontext);
   const [active, setActive] = useState(false);
+  const { none, setNone } = useContext(Mycontext);
+  const { noneMovie, setNoneMovie } = useContext(Mycontext);
 
   useEffect(() => {
     async function getmoviedata() {
@@ -21,6 +23,14 @@ function Home() {
       setMovies(response.data.results);
     }
     getmoviedata();
+
+    const handleLoad = () => {
+      setTimeout(() => {
+        setNone("none");
+        setNoneMovie("");
+      }, 2000);
+    };
+    handleLoad();
   }, [popularMovies]);
 
   const voteAveLow = () => {
@@ -45,8 +55,9 @@ function Home() {
 
   return (
     <div>
-      <Header />
+      <Header page={"home"}/>
       <Banner />
+
       <div>
         <section className="home">
           <div className="container">
@@ -68,7 +79,12 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="movies">
+            <section className={none}>
+              <div className="spinner-container">
+                <div className="loading-spinner"></div>
+              </div>
+            </section>
+            <div className={`movies ${noneMovie}`}>
               {movies.map((movie, i) => (
                 <Movies {...movie} key={movie.id} />
               ))}

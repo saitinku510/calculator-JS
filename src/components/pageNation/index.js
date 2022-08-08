@@ -14,7 +14,8 @@ function PageNation() {
       const resp = await axios.get(
         `https://api.themoviedb.org/3/movie/popular?api_key=54848c6cfecb51d98584e9df33e167f3&page=${page}`
       );
-      const total = resp.data.total_results;
+      let total = resp.data.total_results;
+      total = 10000;
       setPagecount(total / 20);
       setMovies(resp.data.results);
     };

@@ -1,7 +1,6 @@
 .detailMovie {
   background-position: right;
   background-color: #000;
-  /* padding: 0; */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,7 +16,6 @@
 }
 .movieContent {
   max-width: 512px;
-  /* padding-left: 56px; */
   padding-top: 61px;
 }
 .movieContent h1 {
@@ -32,7 +30,6 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 152%;
-  /* opacity: 0.7; */
 }
 .movieContent h5 {
   padding-bottom: 20px;
@@ -47,6 +44,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 50px;
+}
+.blk{
+  display: block;
 }
 @media (max-width: 768px) {
   .movieDetails {
@@ -93,7 +93,9 @@
   border-radius: 50%;
   cursor: pointer;
 }
-
+.none{
+  display: none;
+}
 @keyframes popup {
   0% {
     transform: scale(0.8);
